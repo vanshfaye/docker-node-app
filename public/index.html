@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DevOps App</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #0f172a;
-      color: white;
-      text-align: center;
-      padding-top: 100px;
-    }
-    h1 {
-      font-size: 50px;
-      color: #38bdf8;
-    }
-    p {
-      font-size: 20px;
-    }
-    .box {
-      background: #1e293b;
-      padding: 30px;
-      border-radius: 10px;
-      display: inline-block;
-    }
-  </style>
+  <title>DevOps Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="box">
-    <h1>🚀 DevOps Live App v2</h1>
-    <p>Successfully deployed using Docker + EC2</p>
-    <p>Status: ✅ Running</p>
-  </div>
+
+  <nav>
+    <h2>🚀 DevOps Portfolio</h2>
+  </nav>
+
+  <section class="hero">
+    <h1>Hi, I'm a DevOps Engineer</h1>
+    <p>Docker | AWS | CI/CD | Automation</p>
+    <button onclick="showMessage()">Check Status</button>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <h3>🚀 Deployment</h3>
+      <p>Automated using CI/CD pipeline</p>
+    </div>
+
+    <div class="card">
+      <h3>☁️ Cloud</h3>
+      <p>Running on AWS EC2</p>
+    </div>
+
+    <div class="card">
+      <h3>🐳 Docker</h3>
+      <p>Containerized application</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 DevOps Project</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
