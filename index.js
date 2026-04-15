@@ -1,44 +1,7 @@
 const express = require("express");
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send(`
-    <html>
-      <head>
-        <title>DevOps App</title>
-        <style>
-          body {
-            font-family: Arial;
-            background: #0f172a;
-            color: white;
-            text-align: center;
-            padding-top: 100px;
-          }
-          h1 {
-            font-size: 50px;
-            color: #38bdf8;
-          }
-          p {
-            font-size: 20px;
-          }
-          .box {
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 10px;
-            display: inline-block;
-          }
-        </style>
-      </head>
-      <body>
-        <div class="box">
-          <h1>🚀 DevOps Live App</h1>
-          <p>Successfully deployed using Docker + EC2</p>
-          <p>Status: ✅ Running</p>
-        </div>
-      </body>
-    </html>
-  `);
-});
+app.use(express.static("public"));
 
 app.listen(3000, "0.0.0.0", () => {
   console.log("Server running");
