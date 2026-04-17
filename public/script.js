@@ -1,24 +1,17 @@
-function showMessage() {
-  alert("🚀 App is running successfully on EC2!");
-}
-
-async function loadStatus() {
+async function fetchStatus() {
   try {
-    const res = await fetch("/api/status");
+    const res = await fetch('/status');
     const data = await res.json();
 
     document.getElementById("status").innerHTML = `
-      ⏱️ Uptime: ${Math.floor(data.uptime)} sec <br>
-      🧠 CPU Load: ${data.cpu[0]} <br>
-      💾 Free Memory: ${Math.floor(data.memory / 1024 / 1024)} MB
+      <p>🟢 ${data.status}</p>
+      <p>⏱ Uptime: ${data.uptime}s</p>
+      <p>💾 Memory: ${data.memory}</p>
     `;
-  } catch (err) {
-    document.getElementById("status").innerText = "Error loading data";
+  } catch {
+    document.getElementById("status").innerHTML = "❌ Server Down";
   }
 }
 
-// 🔁 Auto refresh
-setInterval(loadStatus, 2000);
-
-// First load
-loadStatus();
+fetchStatus();
+setInterval(fetchStatus, 5000);
