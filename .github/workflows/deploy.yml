@@ -1,18 +1,30 @@
 - name: Deploy to Server
-  uses: appleboy/ssh-action@v0.1.6
-  with:
-    host: ${{ secrets.HOST }}
-    username: ec2-user
-    key: ${{ secrets.EC2_KEY }}
-    script: |
-      cd /var/www/docker-node-app
 
-      git pull origin main
+on:
+  push:
+    branches:
+      - main
 
-      docker stop myapp || true
-      docker rm myapp || true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
 
-      docker build -t my-node-app .
-      docker run -d -p 3000:3000 --name myapp my-node-app
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /var/www/docker-node-app
 
-      sudo systemctl restart nginx
+            git pull origin main
+
+            docker stop myapp || true
+            docker rm myapp || true
+
+            docker build -t my-node-app .
+            docker run -d -p 3000:3000 --name myapp my-node-app
+
+            sudo systemctl restart nginx
