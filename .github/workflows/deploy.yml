@@ -3,7 +3,7 @@
   with:
     host: ${{ secrets.HOST }}
     username: ec2-user
-    key: ${{ secrets.SSH_KEY }}
+    key: ${{ secrets.EC2_KEY }}
     script: |
       cd /var/www/docker-node-app
 
