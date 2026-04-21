@@ -1,100 +1,66 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI';
-  background: linear-gradient(135deg, #0f172a, #020617);
-  color: white;
-  text-align: center;
+  font-family: system-ui;
+  background: #0b0f19;
+  color: #e5e7eb;
 }
 
-nav {
-  position: sticky;
-  top: 0;
-  padding: 15px;
-  background: rgba(0,0,0,0.7);
+.nav {
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .hero {
-  padding: 80px 20px;
+  text-align: center;
+  padding: 100px 20px;
 }
 
-.typing {
-  font-size: 20px;
-  margin-top: 10px;
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
 }
 
-.btn {
+.hero p {
+  color: #9ca3af;
+}
+
+.buttons button {
   margin: 10px;
-  padding: 12px 20px;
-  border-radius: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.primary {
-  background: #0077b5;
+  background: #2563eb;
   color: white;
 }
 
-.secondary {
-  background: #333;
-  color: white;
+.outline {
+  background: transparent;
+  border: 1px solid #2563eb;
 }
 
-.btn:hover {
-  transform: scale(1.1);
+.section {
+  padding: 60px 20px;
+  text-align: center;
 }
 
-.about {
-  padding: 40px;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  max-width: 600px;
+  margin: auto;
 }
 
-.cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.card {
-  margin: 10px;
+.box, .grid div {
+  background: #111827;
   padding: 20px;
-  width: 150px;
-  border-radius: 15px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-}
-
-.projects {
-  margin-top: 40px;
-}
-
-.project-card {
-  margin: 15px auto;
-  padding: 20px;
-  width: 300px;
-  border-radius: 15px;
-  background: rgba(255,255,255,0.05);
-  transition: 0.3s;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-}
-
-.dashboard {
-  margin-top: 40px;
-}
-
-.contact {
-  margin-top: 40px;
+  border-radius: 10px;
 }
 
 footer {
+  text-align: center;
   padding: 20px;
-  margin-top: 40px;
+  color: #6b7280;
 }
