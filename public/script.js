@@ -1,17 +1,12 @@
-async function fetchStatus() {
-  try {
-    const res = await fetch('/status');
-    const data = await res.json();
+const text = "Docker | AWS | CI/CD | Automation";
+let i = 0;
 
-    document.getElementById("status").innerHTML = `
-      <p>🟢 ${data.status}</p>
-      <p>⏱ Uptime: ${data.uptime}s</p>
-      <p>💾 Memory: ${data.memory}</p>
-    `;
-  } catch {
-    document.getElementById("status").innerHTML = "❌ Server Down";
+function typing() {
+  if (i < text.length) {
+    document.querySelector(".typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing, 50);
   }
 }
 
-fetchStatus();
-setInterval(fetchStatus, 5000);
+typing();
