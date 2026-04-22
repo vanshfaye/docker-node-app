@@ -20,7 +20,7 @@ jobs:
           script: |
             set -e
 
-            cd /var/www/docker-node-app
+            cd docker-node-app
 
             git pull origin main
 
