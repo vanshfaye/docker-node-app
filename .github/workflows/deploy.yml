@@ -18,16 +18,30 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
 
           script: |
+            set -e
+
             cd /var/www/docker-node-app
 
             git pull origin main
 
-            docker stop myapp || true
-            docker rm myapp || true
-            docker rmi my-node-app || true
+            # Build new image
+            docker build -t my-node-app .
 
-            docker build --no-cache -t my-node-app .
+            # Run temp container for validation
+            docker rm -f temp-app || true
+            docker run -d -p 3001:3000 --name temp-app my-node-app
 
-            docker run -d -p 3000:3000 --name myapp my-node-app || docker logs myapp
+            sleep 5
+            docker logs temp-app
+
+            # If temp container is not running, fail
+            docker ps | grep temp-app
+
+            # Replace old container
+            docker rm -f myapp || true
+            docker run -d -p 3000:3000 --name myapp --restart always my-node-app
+
+            # Cleanup
+            docker rm -f temp-app || true
 
             sudo systemctl restart nginx
