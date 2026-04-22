@@ -28,6 +28,6 @@ jobs:
 
             docker build --no-cache -t my-node-app .
 
-            docker run -d -p 3000:3000 --name myapp my-node-app
+            docker run -d -p 3000:3000 --name myapp my-node-app || docker logs myapp
 
             sudo systemctl restart nginx
