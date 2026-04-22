@@ -15,7 +15,8 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }} 
+          key: ${{ secrets.SSH_KEY }}
+
           script: |
             cd /var/www/docker-node-app
 
@@ -23,8 +24,10 @@ jobs:
 
             docker stop myapp || true
             docker rm myapp || true
+            docker rmi my-node-app || true
 
-            docker build -t my-node-app .
+            docker build --no-cache -t my-node-app .
+
             docker run -d -p 3000:3000 --name myapp my-node-app
 
             sudo systemctl restart nginx
