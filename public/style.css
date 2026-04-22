@@ -19,18 +19,6 @@ body {
   text-align: center;
   padding: 100px 20px;
 }
-
-/* PROFILE IMAGE */
-.profile img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #3b82f6;
-  box-shadow: 0 0 40px rgba(59,130,246,0.6);
-  margin-bottom: 20px;
-}
-
 /* NAME (GRADIENT) */
 .name {
   font-size: 50px;
@@ -104,11 +92,4 @@ body {
 .socials i:hover {
   color: #60a5fa;
   transform: scale(1.2);
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #6b7280;
 }
