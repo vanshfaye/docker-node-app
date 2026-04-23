@@ -5,7 +5,7 @@ body {
   color: white;
 }
 
-/* HERO CENTER */
+/* CENTER */
 .hero {
   height: 100vh;
   display: flex;
@@ -14,15 +14,39 @@ body {
   align-items: center;
 }
 
-/* TEXT */
-.hero h1 {
-  font-size: 40px;
-  margin: 0;
+/* PROFILE IMAGE */
+.profile {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2563eb;
+  margin-bottom: 15px;
 }
 
-.hero p {
-  margin-top: 10px;
+/* NAME */
+h1 {
+  margin: 5px 0;
+  font-size: 32px;
+}
+
+/* ROLE */
+h2 {
+  margin: 5px 0;
+  font-size: 18px;
   color: #60a5fa;
+}
+
+/* FRESHER TAG */
+h2 span {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* SKILLS */
+p {
+  margin-top: 10px;
+  color: #cbd5f5;
 }
 
 /* BUTTONS */
@@ -37,13 +61,11 @@ body {
   text-decoration: none;
 }
 
-/* BLUE BUTTON */
 .primary {
   background: #2563eb;
   color: white;
 }
 
-/* OUTLINE BUTTON */
 .secondary {
   border: 1px solid #2563eb;
   color: white;
