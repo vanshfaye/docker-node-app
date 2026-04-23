@@ -1,11 +1,11 @@
 body {
   margin: 0;
   font-family: system-ui;
-  background: linear-gradient(135deg, #0f172a, #020617);
+  background: #020617;
   color: white;
 }
 
-/* FIX CENTERING */
+/* 🔥 MAIN FIX */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -15,22 +15,40 @@ body {
   text-align: center;
 }
 
-/* PROFILE */
-.profile img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #3b82f6;
+/* prevent width issues */
+.hero > * {
+  z-index: 1;
 }
 
-/* NAME */
-.name {
-  font-size: 40px;
-  margin-top: 15px;
+/* background glow */
+.bg-blur {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(59,130,246,0.4), transparent);
+  filter: blur(120px);
+  z-index: 0;
 }
 
-/* BUTTONS */
+/* buttons */
 .buttons {
   margin-top: 20px;
+}
+
+.btn {
+  padding: 12px 20px;
+  margin: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.primary {
+  background: #3b82f6;
+  color: white;
+}
+
+.secondary {
+  border: 1px solid #3b82f6;
+  color: #3b82f6;
 }
