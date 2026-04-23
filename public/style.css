@@ -1,67 +1,50 @@
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-.hero {
-  height: 100vh !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  align-items: center !important;
-  text-align: center !important;
-}
 body {
   margin: 0;
   font-family: system-ui;
-  background: #020617;
+  background: #0f172a;
   color: white;
 }
 
-/*  MAIN FIX */
+/* HERO CENTER */
 .hero {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* vertical center */
-  align-items: center;       /* horizontal center */
-  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
-/* prevent width issues */
-.hero > * {
-  z-index: 1;
+/* TEXT */
+.hero h1 {
+  font-size: 40px;
+  margin: 0;
 }
 
-/* background glow */
-.bg-blur {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(59,130,246,0.4), transparent);
-  filter: blur(120px);
-  z-index: 0;
+.hero p {
+  margin-top: 10px;
+  color: #60a5fa;
 }
 
-/* buttons */
+/* BUTTONS */
 .buttons {
   margin-top: 20px;
 }
 
 .btn {
-  padding: 12px 20px;
+  padding: 10px 20px;
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 8px;
   text-decoration: none;
-  display: inline-block;
 }
 
+/* BLUE BUTTON */
 .primary {
-  background: #3b82f6;
+  background: #2563eb;
   color: white;
 }
 
+/* OUTLINE BUTTON */
 .secondary {
-  border: 1px solid #3b82f6;
-  color: #3b82f6;
+  border: 1px solid #2563eb;
+  color: white;
 }
